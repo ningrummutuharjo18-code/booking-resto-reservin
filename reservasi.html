@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Reservasi | Reservin</title>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="reservasi.css">
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <header class="header">
+            <a class="brand" href="dashboard_user.html">
+                <span class="brand_logo">
+                    <img src="Ikon-aplikasi.png" alt="Ikon Reservin" class="ikon">
+                </span>
+                <span class="brand_nama">Reservin</span>
+            </a>
+            <button class="btn_ikon_header" id="btn_menu" type="button">
+                <span class="ikon">☰</span>
+            </button>
+        </header>
+
+        <!-- ISI HALAMAN -->
+        <main class="halaman_form latar_gradasi">
+            <span class="cahaya a"></span>
+            <span class="cahaya b"></span>
+            <div class="judul_form">
+                <h1>Form Reservasi</h1>
+                <p id="sub_form">Isi data berikut untuk mengatur reservasimu.</p>
+            </div>
+            <form class="kartu kartu_form" id="form_reservasi" novalidate>
+                <div class="field">
+                    <label for="sapaan">Sapaan</label>
+                    <select class="select" id="sapaan" name="sapaan" required>
+                        <option value disabled selected>Pilih sapaan (Mr, Mrs, Ms, dll.)</option>
+                    </select>
+                    <p class="pesan_error" data-error="sapaan"></p>
+                </div>
+                <div class="field">
+                    <label for="tanggal">Tanggal</label>
+                    <select class="select" id="tanggal" name="tanggal" required>
+                        <option value disabled selected>Pilih tanggal</option>
+                    </select>
+                    <p class="pesan_error" data-error="tanggal"></p>
+                </div>
+                <div class="field">
+                    <label for="waktu">Waktu</label>
+                    <select class="select" id="waktu" name="waktu" required>
+                        <option value disabled selected>Pilih waktu</option>
+                    </select>
+                    <p class="pesan_error" data-error="waktu"></p>
+                </div>
+                <div class="field lebar_280px_maks_lebar_100persen">
+                    <label for="tamu">Jumlah Tamu</label>
+                    <select class="select" id="tamu" name="tamu" required>
+                        <option value disabled selected>Pilih jumlah</option>
+                    </select>
+                    <p class="pesan_error" data-error="tamu"></p>
+                </div>
+                <div class="field">
+                    <label for="nama">Nama Lengkap</label>
+                    <input class="input" id="nama" name="nama" type="text" placeholder="Masukkan nama lengkap" required>
+                    <p class="pesan_error" data-error="nama"></p>
+                </div>
+                <div class="field">
+                    <label for="hp">Nomor Telepon</label>
+                    <input class="input" id="hp" name="hp" type="tel" placeholder="Masukkan nomor telepon" required>
+                    <p class="pesan_error" data-error="hp"></p>
+                </div>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input class="input" id="email" name="email" type="email" placeholder="Masukkan email" required>
+                    <p class="pesan_error" data-error="email"></p>
+                </div>
+                <div class="field">
+                    <label for="catatan">Catatan</label>
+                    <textarea class="textarea" id="catatan" name="catatan" placeholder="Catatan khusus (opsional)"></textarea>
+                </div>
+                <div class="field">
+                    <label class="cek" for="setuju">
+                        <input type="checkbox" id="setuju" name="setuju">
+                        <span class="kotak_cek">
+                            <span class="ikon">✓</span>
+                        </span>
+                        <span>Saya menyetujui syarat dan ketentuan reservasi</span>
+                    </label>
+                    <p class="pesan_error" data-error="setuju"></p>
+                </div>
+                <div class="baris_aksi">
+                    <a class="btn btn_garis lebar_220px_tinggi_54px" id="btn_batal" href="restoran.html">Batal</a>
+                    <button class="btn btn_utama lebar_220px_tinggi_54px" type="submit">Reservasi</button>
+                </div>
+            </form>
+        </main>
+
+        <!-- SIDEBAR (menu samping) + latar gelapnya -->
+        <div class="sidebar_overlay" id="sidebar_overlay"></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar_kepala">
+                <p class="sidebar_judul">Menu</p>
+                <button class="btn_tutup" id="btn_tutup_sidebar" type="button">
+                    <span class="ikon">✕</span>
+                </button>
+            </div>
+            <hr class="pemisah">
+            <nav class="sidebar_menu">
+                <a class="sidebar_item" href="riwayat.html">
+                    <span class="gelembung">
+                        <span class="ikon">🕘</span>
+                    </span>
+                    <span class="teks">Riwayat Reservasi</span>
+                    <span class="ikon panah">›</span>
+                </a>
+                <a class="sidebar_item" href="akun.html">
+                    <span class="gelembung">
+                        <span class="ikon">👤</span>
+                    </span>
+                    <span class="teks">Kelola Akun</span>
+                    <span class="ikon panah">›</span>
+                </a>
+                <button class="sidebar_item keluar" id="item_logout" type="button">
+                    <span class="gelembung">
+                        <span class="ikon">🚪</span>
+                    </span>
+                    <span class="teks">Logout</span>
+                </button>
+            </nav>
+        </aside>
+
+        <!-- POPUP LOGOUT -->
+        <div class="overlay tengah" id="popup_logout">
+            <div class="popup kecil">
+                <div>
+                    <h2 class="popup_judul" id="judul_logout">Keluar dari Reservin?</h2>
+                    <p class="popup_sub">Yakin mau logout? Kamu perlu login lagi untuk memakai Reservin.</p>
+                </div>
+                <div class="popup_aksi tengah">
+                    <button class="btn btn_garis lebar_190px" id="btn_logout_batal" type="button">Batal</button>
+                    <button class="btn btn_bahaya lebar_170px" id="btn_logout_ya" type="button">Keluar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESAN KECIL (toast) -->
+        <div class="toast" id="toast"></div>
+
+        <!-- JAVASCRIPT (urutan jangan diubah: data -> common -> halaman ini) -->
+        <script src="data.js"></script>
+        <script src="common.js"></script>
+        <script src="reservasi.js"></script>
+    </body>
+</html>

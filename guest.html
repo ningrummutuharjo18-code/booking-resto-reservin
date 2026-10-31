@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reservin</title>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="guest.css">
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <header class="header">
+            <a class="brand" href="guest.html">
+                <span class="brand_logo">
+                    <img src="Ikon-aplikasi.png" alt="Reservin Logo" class="brand_logo_img">
+                </span>
+                <span class="brand_nama">Reservin</span>
+            </a>
+        </header>
+
+        <!-- ISI HALAMAN -->
+        <main>
+            <section class="hero_guest">
+                <span class="cahaya a"></span>
+                <span class="cahaya b"></span>
+                <h1 class="guest_judul">RESERVIN</h1>
+                <p class="guest_teks">Satu platform untuk reservasi di berbagai restoran terbaik. Cari tempat makan hits dan amankan mejamu dengan mudah.</p>
+                <a class="btn btn_utama lebar_280px_tinggi_56px" href="login.html">Jelajahi Restoran</a>
+            </section>
+            <section class="kerja_sama">
+                <div class="kartu kartu_kerja_sama">
+                    <span class="garis_aksen"></span>
+                    <h2>Gabung Jadi Mitra Restoran</h2>
+                    <p>Kami siap membantu bisnis kuliner milikmu berkembang. Bergabunglah sebagai mitra Reservin dan nikmati kemudahan sistem manajemen reservasi otomatis.</p>
+                    <button class="btn btn_garis lebar_340px_tinggi_54px" id="btn_gabung" type="button">Gabung Sekarang</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- PESAN KECIL (toast) -->
+        <div class="toast" id="toast"></div>
+
+        <!-- JAVASCRIPT (urutan jangan diubah: data -> common -> halaman ini) -->
+        <script src="data.js"></script>
+        <script src="common.js"></script>
+        <script src="guest.js"></script>
+    </body>
+</html>

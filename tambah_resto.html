@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tambah Resto | Reservin</title>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="admin.css">
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <header class="header">
+            <a class="brand" href="dashboard_super_admin.html">
+                <span class="brand_logo">
+                    <img src="Ikon-aplikasi.png" alt="Ikon Reservin" class="ikon">
+                </span>
+                <span class="brand_nama">Reservin</span>
+            </a>
+        </header>
+
+        <!-- ISI HALAMAN -->
+        <main class="konten_admin latar_gradasi">
+            <div class="baris_kembali">
+                <a class="btn_kembali" href="daftar_resto.html">
+                    <span class="ikon">‹</span>
+                </a>
+                <h1 class="judul_halaman">Tambah Resto Baru</h1>
+            </div>
+            <form class="kartu kartu_tambah" id="form_tambah" novalidate>
+                <div class="kepala_form_admin">
+                    <span class="ubin_ikon besar">
+                        <span class="ikon">🏪</span>
+                    </span>
+                    <div>
+                        <h2>Form Registrasi & Akses Restoran Mitra Baru</h2>
+                        <p>Isi formulir ini saat ada restoran baru yang bekerja sama. Kredensial (email & password) yang dibuat di sini akan digunakan oleh pemilik/manajer restoran untuk login ke Dashboard khusus Restoran mereka.</p>
+                    </div>
+                </div>
+                <div class="isi_form_admin">
+                    <section class="seksi">
+                        <h3 class="judul_seksi">
+                            <span class="nomor">1</span>
+                            INFORMASI PROFIL RESTORAN
+                        </h3>
+                        <div class="dua_kolom">
+                            <div class="field">
+                                <label for="nama">Nama Restoran / Outlet *</label>
+                                <input class="input" id="nama" type="text" placeholder="Contoh: Ayam Bakar Pak Ndut - Branch Solo" required>
+                                <p class="pesan_error" data-error="nama"></p>
+                            </div>
+                            <div class="field">
+                                <label for="kategori">Kategori Kuliner / Cuisine *</label>
+                                <select class="select" id="kategori" required>
+                                    <option value disabled selected>-- Pilih Kategori --</option>
+                                    <option>Indonesian</option>
+                                    <option>Japanese</option>
+                                    <option>Cafe</option>
+                                    <option>Western</option>
+                                    <option>Chinese</option>
+                                    <option>Korean</option>
+                                </select>
+                                <p class="pesan_error" data-error="kategori"></p>
+                            </div>
+                            <div class="field">
+                                <label for="telepon">Nomor Telepon Operasional Resto *</label>
+                                <input class="input" id="telepon" type="tel" placeholder="+62 812-3456-7890" required>
+                                <p class="pesan_error" data-error="telepon"></p>
+                            </div>
+                            <div class="field">
+                                <label for="kota">Kota / Lokasi *</label>
+                                <input class="input" id="kota" type="text" placeholder="Contoh: Surakarta, Jawa Tengah" required>
+                                <p class="pesan_error" data-error="kota"></p>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="seksi">
+                        <h3 class="judul_seksi">
+                            <span class="nomor">2</span>
+                            KREDENSIAL AKSES MERCHANT (LOGIN RESTO)
+                        </h3>
+                        <div class="kotak_info">
+                            <span class="ubin_kunci">
+                                <span class="ikon">🔑</span>
+                            </span>
+                            <p>Email dan Password ini yang akan diberikan kepada pemilik/manajer restoran untuk masuk ke Merchant Dashboard mereka. Pastikan data ini dicatat atau dikirimkan ke pihak mitra.</p>
+                        </div>
+                        <div class="dua_kolom">
+                            <div class="field">
+                                <label for="email">Email Login Resto *</label>
+                                <input class="input" id="email" type="email" placeholder="admin.solo@ayambakar.com" required>
+                                <p class="pesan_error" data-error="email"></p>
+                            </div>
+                            <div class="field">
+                                <label for="sandi">Password Akses Sementara *</label>
+                                <div class="input_sandi">
+                                    <input class="input" id="sandi" type="text" placeholder="Sertakan password unik" required>
+                                    <button class="btn_generate" id="btn_generate" type="button">Generate</button>
+                                </div>
+                                <p class="pesan_error" data-error="sandi"></p>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="baris_aksi kiri">
+                        <button class="btn btn_garis tinggi_54px" id="btn_reset" type="button">Reset Form</button>
+                        <button class="btn btn_utama tinggi_54px" type="submit">
+                            <span class="ikon">⬆</span>
+                            Simpan ke Database & Terbitkan Akses
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <!-- POPUP LOGOUT -->
+        <div class="overlay tengah" id="popup_logout">
+            <div class="popup kecil">
+                <div>
+                    <h2 class="popup_judul" id="judul_logout">Keluar dari Reservin?</h2>
+                    <p class="popup_sub">Yakin mau logout? Kamu perlu login lagi untuk memakai Reservin.</p>
+                </div>
+                <div class="popup_aksi tengah">
+                    <button class="btn btn_garis lebar_190px" id="btn_logout_batal" type="button">Batal</button>
+                    <button class="btn btn_bahaya lebar_170px" id="btn_logout_ya" type="button">Keluar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESAN KECIL (toast) -->
+        <div class="toast" id="toast"></div>
+
+        <!-- JAVASCRIPT (urutan jangan diubah: data -> common -> halaman ini) -->
+        <script src="data.js"></script>
+        <script src="common.js"></script>
+        <script src="tambah_resto.js"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daftar User | Reservin</title>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="admin.css">
+    </head>
+    <body>
+
+        <!-- HEADER -->
+        <header class="header">
+            <a class="brand" href="dashboard_super_admin.html">
+                <span class="brand_logo">
+                    <img src="Ikon-aplikasi.png" alt="Ikon Reservin" class="ikon">
+                </span>
+                <span class="brand_nama">Reservin</span>
+            </a>
+            <nav class="nav_admin">
+                <a class="nav_item" href="dashboard_super_admin.html">Beranda</a>
+                <a class="nav_item" href="daftar_resto.html">Daftar Resto</a>
+                <a class="nav_item aktif" href="daftar_user.html">Daftar User</a>
+                <a class="nav_item" href="daftar_reservasi.html">Riwayat Booking</a>
+            </nav>
+            <button class="btn_ikon_header" id="btn_keluar_admin" type="button">
+                <span class="ikon">🚪</span>
+            </button>
+        </header>
+
+        <main class="konten_admin latar_gradasi">
+            <div class="judul_admin">
+                <h1>Daftar User</h1>
+                <p>Pengguna yang terdaftar di Reservin</p>
+            </div>
+            <div class="kartu kartu_tabel">
+                <div class="gulir_tabel">
+                    <table class="tabel">
+                        <thead>
+                            <tr>
+                                <th scope="col">NAMA USER</th>
+                                <th scope="col">EMAIL</th>
+                                <th scope="col">NO HP</th>
+                                <th scope="col">TOTAL BOOKING</th>
+                            </tr>
+                        </thead>
+                        <tbody id="isi_tabel"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <div class="overlay tengah" id="popup_logout">
+            <div class="popup kecil">
+                <div>
+                    <h2 class="popup_judul" id="judul_logout">Keluar dari Reservin?</h2>
+                    <p class="popup_sub">Yakin mau logout? Kamu perlu login lagi untuk memakai Reservin.</p>
+                </div>
+                <div class="popup_aksi tengah">
+                    <button class="btn btn_garis lebar_190px" id="btn_logout_batal" type="button">Batal</button>
+                    <button class="btn btn_bahaya lebar_170px" id="btn_logout_ya" type="button">Keluar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast" id="toast"></div>
+
+        <script src="data.js"></script>
+        <script src="common.js"></script>
+        <script src="daftar_user.js"></script>
+    </body>
+</html>

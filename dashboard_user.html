@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Beranda | Reservin</title>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="base.css">
+        <link rel="stylesheet" href="dashboard_user.css">
+    </head>
+    <body>
+
+        <header class="header">
+            <a class="brand" href="dashboard_user.html">
+                <span class="brand_logo">
+                    <img src="Ikon-aplikasi.png" alt="Ikon Reservin" class="ikon">   
+                </span>
+                <span class="brand_nama">Reservin</span>
+            </a>
+            <button class="btn_ikon_header" id="btn_menu" type="button">
+                <span class="ikon">☰</span>
+            </button>
+        </header>
+
+        <main>
+            <section class="hero_dash">
+                <span class="cahaya a"></span>
+                <span class="cahaya b"></span>
+                <h1>Mau Makan di Mana Hari Ini?</h1>
+                <p>Temukan tempat makan terbaik di sekitarmu dan pesan meja tanpa perlu antre.</p>
+                <div class="kotak_cari">
+    <input id="input_cari" type="search" placeholder="Search" autocomplete="off">
+    <button class="btn_cari" id="btn_cari" type="button" aria-label="Cari">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </button>
+</div>
+                <a class="btn btn_utama lebar_560px_maks_lebar_100persen_tinggi_56px" href="chat.html">
+                    <span class="ikon">💬</span>
+                    Chat Rekomendasi
+                </a>
+                <button class="btn btn_garis lebar_560px_maks_lebar_100persen_tinggi_56px" id="btn_lihat_semua" type="button">Lihat Semua</button>
+            </section>
+            <section class="bagian_rekomendasi">
+                <div class="judul_bagian">
+                    <span class="garis_aksen kecil"></span>
+                    <h2 id="judul_daftar">Rekomendasi untuk Kamu</h2>
+                </div>
+                <div class="grid_kartu" id="daftar_resto"></div>
+                <p class="kosong" id="pesan_kosong" hidden>Restoran yang kamu cari belum ditemukan.</p>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer_atas">
+                <div class="footer_brand">
+                    <div class="brand">
+                        <span class="brand_logo">
+                            <img src="Ikon-aplikasi.png" alt="Ikon Reservin" class="ikon">
+                        </span>
+                        <span class="brand_nama">Reservin</span>
+                    </div>
+                    <p class="footer_tentang">Platform yang membantu kamu menemukan layanan yang dibutuhkan dengan mudah.</p>
+                </div>
+                <div class="footer_kontak">
+                    <div>
+                        <span class="ikon">📍</span>
+                        <span>Jl. Contoh No. 123, Kota Contoh, Indonesia</span>
+                    </div>
+                    <div>
+                        <span class="ikon">📞</span>
+                        <span>+62 812-3456-7890</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_garis"></div>
+            <p class="footer_hak">© 2026 Reservin. Semua hak dilindungi.</p>
+        </footer>
+
+        <!-- SIDEBAR (menu samping) + latar gelapnya -->
+        <div class="sidebar_overlay" id="sidebar_overlay"></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar_kepala">
+                <p class="sidebar_judul">Menu</p>
+                <button class="btn_tutup" id="btn_tutup_sidebar" type="button">
+                    <span class="ikon">✕</span>
+                </button>
+            </div>
+            <hr class="pemisah">
+            <nav class="sidebar_menu">
+                <a class="sidebar_item" href="riwayat.html">
+                    <span class="gelembung">
+                        <span class="ikon">🕘</span>
+                    </span>
+                    <span class="teks">Riwayat Reservasi</span>
+                    <span class="ikon panah">›</span>
+                </a>
+                <a class="sidebar_item" href="akun.html">
+                    <span class="gelembung">
+                        <span class="ikon">👤</span>
+                    </span>
+                    <span class="teks">Kelola Akun</span>
+                    <span class="ikon panah">›</span>
+                </a>
+                <button class="sidebar_item keluar" id="item_logout" type="button">
+                    <span class="gelembung">
+                        <span class="ikon">🚪</span>
+                    </span>
+                    <span class="teks">Logout</span>
+                </button>
+            </nav>
+        </aside>
+
+        <div class="overlay tengah" id="popup_logout">
+            <div class="popup kecil">
+                <div>
+                    <h2 class="popup_judul" id="judul_logout">Keluar dari Reservin?</h2>
+                    <p class="popup_sub">Yakin mau logout? Kamu perlu login lagi untuk memakai Reservin.</p>
+                </div>
+                <div class="popup_aksi tengah">
+                    <button class="btn btn_garis lebar_190px" id="btn_logout_batal" type="button">Batal</button>
+                    <button class="btn btn_bahaya lebar_170px" id="btn_logout_ya" type="button">Keluar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast" id="toast"></div>
+
+        <script src="data.js"></script>
+        <script src="common.js"></script>
+        <script src="dashboard_user.js"></script>
+    </body>
+</html>

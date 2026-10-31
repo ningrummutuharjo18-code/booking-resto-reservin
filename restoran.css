@@ -1,0 +1,75 @@
+/* restoran.css - halaman detail restoran */
+.hero_resto { display: flex; gap: 56px; align-items: flex-start; }
+.foto_hero {
+  width: 580px; height: 400px; flex-shrink: 0; border-radius: 28px;
+  box-shadow: 0 16px 40px rgba(133, 41, 0, 0.14);
+}
+.deskripsi_resto { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.deskripsi_resto p { font-size: 17px; line-height: 30px; color: rgba(0, 0, 0, 0.75); }
+.info_chip { display: flex; flex-wrap: wrap; gap: 10px; }
+.info_chip .chip .ikon { font-size: 14px; }
+
+.bagian_menu { display: flex; flex-direction: column; gap: 28px; }
+.kepala_menu { display: flex; align-items: center; justify-content: space-between; }
+.kepala_menu h2 { font-size: 34px; }
+.panah_menu { display: flex; gap: 12px; }
+.btn_panah {
+  width: 44px; height: 44px; border-radius: 22px; background: #fff;
+  border: 1.5px solid var(--garis); color: var(--coklat); font-size: 20px;
+  display: flex; align-items: center; justify-content: center;
+  filter: drop-shadow(0 3px 5px rgba(133, 41, 0, 0.06));
+}
+.btn_panah:hover { background: var(--krem); }
+
+.daftar_menu {
+  display: flex; gap: 24px; overflow-x: auto; padding: 4px 4px 24px;
+  scroll-snap-type: x mandatory; scrollbar-width: none; scroll-behavior: smooth;
+}
+.daftar_menu::-webkit-scrollbar { display: none; }
+.kartu_menu {
+  flex: 0 0 262px; scroll-snap-align: start;
+  background: #fff; border: 1px solid var(--garis); border-radius: 20px; overflow: hidden;
+  box-shadow: 0 8px 24px rgba(133, 41, 0, 0.08);
+}
+.menu_foto { height: 190px; width: 100%; }
+.menu_isi { padding: 16px 18px 20px; display: flex; flex-direction: column; gap: 6px; }
+.menu_isi h3 { font-family: var(--font-judul); font-weight: 600; font-size: 20px; color: var(--coklat); line-height: 1.25; }
+.menu_isi p { font-weight: 700; font-size: 16px; color: var(--oranye); }
+.menu_kosong { font-size: 16px; color: rgba(0, 0, 0, 0.6); padding: 12px 4px 24px; }
+
+.indikator { display: flex; align-items: center; justify-content: center; gap: 16px; color: var(--coklat); font-size: 20px; }
+.indikator .ikon { opacity: .6; }
+.trek { width: 300px; max-width: 60%; height: 6px; border-radius: 3px; background: var(--krem-tua); position: relative; }
+.jempol {
+  position: absolute; left: 0; top: 0; height: 6px; width: 120px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--coklat-terang), var(--coklat));
+}
+.baris_tombol { display: flex; justify-content: center; }
+
+/* isi popup syarat */
+.judul_syarat { display: flex; flex-direction: column; gap: 10px; }
+.daftar_syarat { list-style: none; counter-reset: syarat; display: flex; flex-direction: column; gap: 18px; }
+.daftar_syarat li { counter-increment: syarat; display: flex; gap: 16px; align-items: flex-start; font-size: 15px; line-height: 24px; color: rgba(0, 0, 0, 0.85); }
+.daftar_syarat li::before {
+  content: counter(syarat); flex: 0 0 30px; height: 30px; border-radius: 50%;
+  background: var(--krem-tua); color: var(--coklat); font-weight: 700; font-size: 13px;
+  display: flex; align-items: center; justify-content: center;
+}
+#popup_syarat .popup { padding: 44px 48px; }
+
+@media (max-width: 900px) {
+  .hero_resto { flex-direction: column; gap: 28px; }
+  .foto_hero { width: 100%; height: 260px; }
+  .kepala_menu h2 { font-size: 26px; }
+  .kartu_menu { flex-basis: 230px; }
+  #popup_syarat .popup { padding: 28px 22px; }
+}
+/* foto restoran & menu: memenuhi kotak tanpa gepeng */
+.foto_hero, .menu_foto { position: relative; overflow: hidden; }
+.foto_hero .foto_img, .menu_foto .foto_img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+}

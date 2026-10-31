@@ -1,0 +1,4 @@
+/* akun.css - kelola akun */
+.kartu_akun { width: 100%; padding: 48px 52px 52px; display: flex; flex-direction: column; gap: 30px; }
+.kartu_akun .baris_aksi { display: flex; justify-content: center; gap: 16px; }
+@media (max-width: 900px) { .kartu_akun { padding: 28px 20px; } .kartu_akun .baris_aksi .btn { flex: 1; width: auto !important; } }
