@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Restoran — Reservin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__logo"><i class="ic ic-pin"></i></div>
+      <div>
+        <div class="brand__name">Reserv<span>in</span></div>
+        <div class="brand__sub">Portal Restoran</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="beranda.html" class="nav__item"><i class="ic ic-home"></i><span>Beranda</span></a>
+      <a href="reservasi.html" class="nav__item"><i class="ic ic-calendar"></i><span>Reservasi</span><span class="nav__badge">4</span></a>
+      <a href="menu.html" class="nav__item"><i class="ic ic-clipboard"></i><span>Menu</span></a>
+      <a href="profil-restoran.html" class="nav__item is-active"><i class="ic ic-building"></i><span>Profil Restoran</span></a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="resto-mini">
+        <img src="../img/avatar-restoran.jpg" alt="">
+        <div>
+          <div class="resto-mini__name">Warung Sambal Kencana</div>
+          <div class="resto-mini__city">Yogyakarta</div>
+        </div>
+      </div>
+      <a href="#" class="logout"><i class="ic ic-logout"></i><span>Keluar</span></a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="page-head">
+      <div>
+        <h1>Profil Restoran</h1>
+        <p>Kelola informasi dan tampilan restoran Anda di Reservin</p>
+      </div>
+    </header>
+
+    <section class="card profile-card">
+      <h2 class="profile-card__title" style="font-weight:400">Foto Sampul Restoran</h2>
+      <div class="cover">
+        <img src="../img/foto-restoran.jpg" alt="Foto sampul Warung Sambal Kencana">
+        <label class="cover__btn" style="cursor:pointer">
+          <input type="file" accept="image/png,image/jpeg" hidden>
+          <i class="ic ic-image"></i> Ganti Foto Sampul
+        </label>
+      </div>
+      <p class="cover__hint">Format JPG atau PNG, maksimal 5 MB. Gunakan foto horizontal terbaik restoran Anda.</p>
+    </section>
+
+    <form action="#">
+      <section class="card profile-card form">
+        <label class="field">
+          <span class="field__label">Nama Restoran</span>
+          <input class="input" type="text" value="Warung Sambal Kencana">
+        </label>
+        <label class="field">
+          <span class="field__label">Deskripsi</span>
+          <textarea class="input">Warung Sambal Kencana menyajikan masakan Jawa autentik dengan sambal kencana khas yang menggugah selera. Bumbu rahasia dari nenek moyang, rasa yang tak terlupakan sejak 1992.</textarea>
+        </label>
+        <label class="field">
+          <span class="field__label">Kategori</span>
+          <select class="input">
+            <option selected>Masakan Jawa</option><option>Masakan Sunda</option><option>Seafood</option>
+            <option>Western</option><option>Kafe</option>
+          </select>
+        </label>
+        <label class="field">
+          <span class="field__label">Alamat</span>
+          <input class="input" type="text" value="Jl. Kaliurang KM 7, Sleman, Yogyakarta">
+        </label>
+        <div class="two-cols" style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <label class="field">
+            <span class="field__label">Jam Buka</span>
+            <span class="time-wrap"><input class="input" type="text" value="09.00"><i class="ic ic-clock"></i></span>
+          </label>
+          <label class="field">
+            <span class="field__label">Jam Tutup</span>
+            <span class="time-wrap"><input class="input" type="text" value="21.00"><i class="ic ic-clock"></i></span>
+          </label>
+        </div>
+      </section>
+      <button type="submit" class="btn btn--save">Simpan Perubahan</button>
+    </form>
+  </main>
+</div>
+</body>
+</html>

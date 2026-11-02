@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beranda — Reservin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__logo"><i class="ic ic-pin"></i></div>
+      <div>
+        <div class="brand__name">Reserv<span>in</span></div>
+        <div class="brand__sub">Portal Restoran</div>
+      </div>
+    </div>
+
+    <nav class="nav">
+      <a href="beranda.html" class="nav__item is-active"><i class="ic ic-home"></i><span>Beranda</span></a>
+      <a href="reservasi.html" class="nav__item"><i class="ic ic-calendar"></i><span>Reservasi</span><span class="nav__badge">4</span></a>
+      <a href="menu.html" class="nav__item"><i class="ic ic-clipboard"></i><span>Menu</span></a>
+      <a href="profil-restoran.html" class="nav__item"><i class="ic ic-building"></i><span>Profil Restoran</span></a>
+    </nav>
+
+    <div class="sidebar__footer">
+      <div class="resto-mini">
+        <img src="../img/avatar-restoran.jpg" alt="">
+        <div>
+          <div class="resto-mini__name">Warung Sambal Kencana</div>
+          <div class="resto-mini__city">Yogyakarta</div>
+        </div>
+      </div>
+      <a href="#" class="logout"><i class="ic ic-logout"></i><span>Keluar</span></a>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="greeting">
+      <p class="greeting__date" id="tanggal-waktu"></p>
+      <h1 class="greeting__title">Selamat datang kembali,</h1>
+      <p class="greeting__resto">Warung Sambal Kencana</p>
+    </header>
+
+    <section class="stats">
+      <article class="card stat">
+        <div class="stat__top">
+          <span class="stat__label">Reservasi Hari Ini</span>
+          <span class="stat__icon stat__icon--orange"><i class="ic ic-calendar"></i></span>
+        </div>
+        <div class="stat__value">5</div>
+        <div class="stat__desc">reservasi masuk hari ini</div>
+      </article>
+      <article class="card stat">
+        <div class="stat__top">
+          <span class="stat__label">Menunggu Konfirmasi</span>
+          <span class="stat__icon stat__icon--yellow"><i class="ic ic-clock"></i></span>
+        </div>
+        <div class="stat__value stat__value--orange">4</div>
+        <div class="stat__desc">perlu segera dikonfirmasi</div>
+      </article>
+      <article class="card stat">
+        <div class="stat__top">
+          <span class="stat__label">Selesai Minggu Ini</span>
+          <span class="stat__icon stat__icon--green"><i class="ic ic-check-circle"></i></span>
+        </div>
+        <div class="stat__value">5</div>
+        <div class="stat__desc">reservasi terlayani</div>
+      </article>
+    </section>
+
+    <section class="card recent">
+      <div class="recent__head">
+        <div>
+          <h2>Reservasi Terbaru</h2>
+          <p>5 reservasi terkini</p>
+        </div>
+        <a href="reservasi.html" class="recent__all">Lihat Semua <i class="ic ic-chevron-right"></i></a>
+      </div>
+      <ul>
+        <li class="recent__row">
+          <div class="avatar-initial">FZ</div>
+          <div class="recent__info">
+            <div class="recent__name">Farhan Zaki</div>
+            <div class="recent__meta">2026-10-02 · 12:30 WIB · 3 orang</div>
+          </div>
+          <span class="pill pill--menunggu">⏳ Menunggu</span>
+        </li>
+        <li class="recent__row">
+          <div class="avatar-initial">KS</div>
+          <div class="recent__info">
+            <div class="recent__name">Kartika Sari</div>
+            <div class="recent__meta">2026-10-02 · 18:00 WIB · 7 orang</div>
+          </div>
+          <span class="pill pill--menunggu">⏳ Menunggu</span>
+        </li>
+        <li class="recent__row">
+          <div class="avatar-initial">BS</div>
+          <div class="recent__info">
+            <div class="recent__name">Budi Santoso</div>
+            <div class="recent__meta">2026-10-01 · 12:00 WIB · 4 orang</div>
+          </div>
+          <span class="pill pill--menunggu">⏳ Menunggu</span>
+        </li>
+        <li class="recent__row">
+          <div class="avatar-initial">AF</div>
+          <div class="recent__info">
+            <div class="recent__name">Ahmad Fauzi</div>
+            <div class="recent__meta">2026-10-01 · 19:00 WIB · 6 orang</div>
+          </div>
+          <span class="pill pill--menunggu">⏳ Menunggu</span>
+        </li>
+        <li class="recent__row">
+          <div class="avatar-initial">DK</div>
+          <div class="recent__info">
+            <div class="recent__name">Dewi Kurnia</div>
+            <div class="recent__meta">2026-10-01 · 20:30 WIB · 3 orang</div>
+          </div>
+          <span class="pill pill--dikonfirmasi">✓ Dikonfirmasi</span>
+        </li>
+      </ul>
+    </section>
+  </main>
+</div>
+<script>
+  // Tanggal & jam realtime (WIB), diperbarui tiap detik
+  (function () {
+    var el = document.getElementById('tanggal-waktu');
+    function tampil() {
+      var now = new Date();
+      var tgl = new Intl.DateTimeFormat('id-ID', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Asia/Jakarta'
+      }).format(now);
+      var jam = new Intl.DateTimeFormat('id-ID', {
+        hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'Asia/Jakarta'
+      }).format(now).replace(/\./g, ':');
+      el.textContent = tgl + ' · ' + jam + ' WIB';
+    }
+    tampil();
+    setInterval(tampil, 1000);
+  })();
+</script>
+</body>
+</html>
